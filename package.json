@@ -1,0 +1,9 @@
+{
+  "name": "eslint-plugin-custom",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "debug": "^4.1.1"
+  }
+}
