@@ -1,5 +1,6 @@
 const getLineDifference = require('../utils/getLineDifference');
 const newLineFixer = require('../utils/newLineFixer');
+const setNodeStartLine = require('../utils/setNodeStartLine');
 
 module.exports = {
   meta: {
@@ -29,6 +30,8 @@ module.exports = {
           if (subNode.type !== 'MethodDefinition') {
             return;
           }
+
+          setNodeStartLine(subNode)
 
           const prevSubNode = node.body[index - 1];
 

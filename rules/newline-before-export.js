@@ -1,5 +1,6 @@
 const getLineDifference = require('../utils/getLineDifference');
 const newLineFixer = require('../utils/newLineFixer');
+const setNodeStartLine = require('../utils/setNodeStartLine');
 
 module.exports = {
   meta: {
@@ -22,6 +23,7 @@ module.exports = {
     const checkForNewLine = (node, prevNode) => {
       const source = context.getSourceCode();
       const options = context.options[0] || { count: 1 };
+      setNodeStartLine(node);
       const lineDiff = getLineDifference(node, prevNode);
       const expectedLineDiff = options.count + 1;
 
@@ -48,7 +50,7 @@ module.exports = {
     }
 
     const checkExport = (node) => {
-      const { parent } = node
+      const { parent } = node;
       const nodePosition = parent.body.indexOf(node);
       const prevNode = parent.body[nodePosition - 1];
 

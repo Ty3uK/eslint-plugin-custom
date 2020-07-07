@@ -10,7 +10,7 @@ module.exports = function newLineFixer({
   if (lineDiff > expectedLineDiff) {
     const range = [
       source.getIndexFromLoc({ line: prevNode.loc.end.line + 1, column: 0 }),
-      source.getIndexFromLoc({ line: node.loc.start.line, column: 0 }),
+      source.getIndexFromLoc({ line: node.startLine, column: 0 }),
     ];
 
     return fixer.replaceTextRange(
