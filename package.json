@@ -4,6 +4,6 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "debug": "^4.1.1"
+    "debug": "^4.3.1"
   }
 }
